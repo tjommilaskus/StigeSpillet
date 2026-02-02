@@ -3,7 +3,7 @@
 Start alltid med :
 `git pull`
 
-Så bytter du til din brach: `git switch <brach name>`
+Så bytter du til din branch: `git switch <branch name>`
 
 Når du har gjort endringer: `git add .`
 
