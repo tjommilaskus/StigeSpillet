@@ -1,4 +1,3 @@
-package no.hvl;
-
 public class Spiller {
+    private String navn;
 }
