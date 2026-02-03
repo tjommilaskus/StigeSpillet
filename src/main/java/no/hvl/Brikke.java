@@ -22,7 +22,7 @@ public class Brikke {
      *
      */
     public int getRute() {
-        return rute;
+        return rute.getRuteNr();
     }
 
     public void setNr(Rute rute) {
