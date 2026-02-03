@@ -14,7 +14,7 @@ public class Brikke {
      */
     public Brikke(int nr) {
         this.nr = nr;
-        this.rute = 0;
+        rute.setRute() = 0;
     }
 
     /**
