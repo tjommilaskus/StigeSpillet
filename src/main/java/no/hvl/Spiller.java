@@ -1,5 +1,5 @@
 package no.hvl;
-/*
+/**
 * Dette er Spiler Klassen
 *  @Author Martin Palm
  */

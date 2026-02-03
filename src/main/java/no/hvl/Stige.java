@@ -1,5 +1,5 @@
 package no.hvl;
-/*
+/**
 * Stige klasse som skal flytte spiller opp ruter
 *  @Author Martin Palm
  */

@@ -1,5 +1,5 @@
 package no.hvl;
-/*
+/**
 * @Author Martin Palm
 * Slange klasse som skal flytte spiller ned ruter
  */
