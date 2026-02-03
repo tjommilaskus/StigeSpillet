@@ -10,11 +10,13 @@ public class Brikke {
 
     /**
      * Konstruerer Brikke
-     * @param nr
+     * setter startruten til 0
+     * @param nr id nummer
+     *
      */
-    public Brikke(int nr) {
+    public Brikke(int nr, Rute rute) {
         this.nr = nr;
-        rute.setRute() = 0;
+        rute.setRute(0);
     }
 
     /**
