@@ -23,7 +23,7 @@ for(int i = 0; i < antall; ) {
 
     spillere[i].setNavn(navn[i]);
 }
-        
+
 
 
 
