@@ -5,18 +5,18 @@ package no.hvl;
  * @author Antonio Gil Hammerstad
  */
 public class Brikke {
-    private int nr;
-    private Rute rute;
+    private int id;
+    private int rutenr;
 
     /**
      * Konstruerer Brikke
      * setter startruten til 0
-     * @param nr id nummer
+     * @param id id nummer
      *
      */
-    public Brikke(int nr, Rute rute) {
-        this.nr = nr;
-        rute.setRute(0);
+    public Brikke(int id) {
+        this.id = id;
+        this.rutenr = 0;
     }
 
     /**
@@ -24,19 +24,24 @@ public class Brikke {
      *
      */
     public int getRute() {
-        return rute.getRuteNr();
+        return rutenr;
     }
 
-    public void setNr(Rute rute) {
-        this.rute = rute;
+    public void setPos(int rutenr) {
+        this.rutenr = rutenr;
     }
 
     /**
-     * brikken sjekker hvilken rute den lander på
+     * brikken tar inn terning kast og regner ut hvor den skal
      * @return ruten den landet på
      */
-    public int sjekkRute(){
-        return getRute();
+    public int flyttTilRute(int flytt){
+        int nyRute = getRute() + flytt;
+        setPos(nyRute);
+        return nyRute;
 
+    }
+    public boolean sjekkmaal(){
+        return getRute() == 100;
     }
 }
