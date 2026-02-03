@@ -21,10 +21,20 @@ public class Spiller {
     }
 
 
+    public void slangeEllerStiggeFlytt(int flytt){
+
+        brikke.flyttTilRute(flytt);
+    }
+
+    public int sjekkRutenr(){
+
+        return brikke.getRute();
+    }
 
     public int spillTrekk(){
 
   int flytt = terning.trill();
+
 int nyRute = brikke.flyttTilRute(flytt);
 
 

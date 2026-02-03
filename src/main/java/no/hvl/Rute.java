@@ -8,6 +8,7 @@ package no.hvl;
 public class Rute {
     private int RuteNr;
 
+
     /**
      * Konstruerer Ruter
      * @param RuteNr rute id

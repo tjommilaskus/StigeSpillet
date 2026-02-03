@@ -44,8 +44,31 @@ for(int i = 0; i < antall; ) {
 
         for(int i = 0; i < spillere.length; i++){
 
-            spillere[i].spillTrekk();
-            brett
+            boolean omTrekk = true;
+            int omTrekkTeller = 0;
+
+            while(true) {
+                int plass1 = spillere[i].sjekkRutenr();
+                int nyRute = spillere[i].spillTrekk();
+                int tpFlytt = brett.sjekkRute(nyRute);
+                int plass2 = spillere[i].sjekkRutenr();
+                spillere[i].slangeEllerStiggeFlytt(tpFlytt);
+
+                if((plass2 - plass1) != 6){
+                    omTrekk = false;
+                }else{
+                    omTrekkTeller++;
+                }
+                if(omTrekkTeller == 3){
+                    spillere[i].slangeEllerStiggeFlytt(0);
+
+                }
+
+            }
+
+
+
+
 
         }
 
