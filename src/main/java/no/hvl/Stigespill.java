@@ -2,7 +2,7 @@ package no.hvl;
 
 import java.util.Scanner;
 
-/*
+/**
  * Dette er Stigespill klassen og det er her spillet blir laget
  *  @Author Ebrima Jallow
  */
@@ -10,6 +10,7 @@ public class Stigespill {
 private boolean ferdig;
 private Brett brett;
 private Spiller[] spillere;
+Scanner scanner = new Scanner(System.in);
 
 
     /**
@@ -51,7 +52,10 @@ for(int i = 0; i < antall; ) {
 
             while(true) {
                 int plass1 = spiller.sjekkRutenr();
+                System.out.println("Trykk enter for å rulle terning!");
+                scanner.next();
                 int nyRute = spiller.spillTrekk();
+                scanner.close();
                 int tpFlytt = brett.sjekkRute(nyRute);
                 int plass2 = spiller.sjekkRutenr();
                 spiller.slangeEllerStiggeFlytt(tpFlytt);

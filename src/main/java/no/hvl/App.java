@@ -8,6 +8,9 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        String navn[] = {"martin","tobias"};
+        Stigespill stigespill = new Stigespill();
+        stigespill.spill(2, navn);
+
     }
 }
