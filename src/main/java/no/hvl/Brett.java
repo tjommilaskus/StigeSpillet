@@ -13,6 +13,7 @@ public class Brett extends JFrame {
         setSize(650, 650);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+
         lagRuter();
         lagEksempelStiger();
 

@@ -7,9 +7,9 @@ import java.util.Scanner;
  *  @Author Ebrima Jallow
  */
 public class Stigespill {
-boolean ferdig;
-Brett brett;
-Spiller[] spillere;
+private boolean ferdig;
+private Brett brett;
+private Spiller[] spillere;
 
 
     /**
@@ -23,6 +23,8 @@ for(int i = 0; i < antall; ) {
 
     spillere[i].setNavn(navn[i]);
 }
+        
+
 
 
       }
@@ -42,17 +44,17 @@ for(int i = 0; i < antall; ) {
 
     public void spillRunde(Spiller[] spillere){
 
-        for(int i = 0; i < spillere.length; i++){
+        for(Spiller spiller : spillere){
 
             boolean omTrekk = true;
             int omTrekkTeller = 0;
 
             while(true) {
-                int plass1 = spillere[i].sjekkRutenr();
-                int nyRute = spillere[i].spillTrekk();
+                int plass1 = spiller.sjekkRutenr();
+                int nyRute = spiller.spillTrekk();
                 int tpFlytt = brett.sjekkRute(nyRute);
-                int plass2 = spillere[i].sjekkRutenr();
-                spillere[i].slangeEllerStiggeFlytt(tpFlytt);
+                int plass2 = spiller.sjekkRutenr();
+                spiller.slangeEllerStiggeFlytt(tpFlytt);
 
                 if((plass2 - plass1) != 6){
                     omTrekk = false;
@@ -60,13 +62,15 @@ for(int i = 0; i < antall; ) {
                     omTrekkTeller++;
                 }
                 if(omTrekkTeller == 3){
-                    spillere[i].slangeEllerStiggeFlytt(0);
+                    spiller.slangeEllerStiggeFlytt(0);
 
                 }
 
             }
 
-
+if(spiller.sjekkMaal()){
+    ferdig = !ferdig;
+}
 
 
 

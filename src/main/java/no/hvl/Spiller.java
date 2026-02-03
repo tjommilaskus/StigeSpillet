@@ -31,6 +31,10 @@ public class Spiller {
         return brikke.getRute();
     }
 
+    public boolean sjekkMaal(){
+       return brikke.sjekkmaal();
+    }
+
     public int spillTrekk(){
 
   int flytt = terning.trill();
