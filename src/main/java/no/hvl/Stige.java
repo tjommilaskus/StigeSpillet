@@ -7,7 +7,7 @@ package no.hvl;
 public class Stige extends Rute {
     private int stigeTil;
 
-    public Stige getStige() {
+    public int getStige() {
         return stigeTil;
     }
 
