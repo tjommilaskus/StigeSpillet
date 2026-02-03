@@ -1,5 +1,5 @@
 package no.hvl;
-/*
+/**
 * Stige klasse som skal flytte spiller opp ruter
 *  @Author Martin Palm
  */
@@ -7,7 +7,7 @@ package no.hvl;
 public class Stige extends Rute {
     private int stigeTil;
 
-    public Stige getStige() {
+    public int getStige() {
         return stigeTil;
     }
 
