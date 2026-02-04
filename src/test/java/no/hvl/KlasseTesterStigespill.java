@@ -3,14 +3,25 @@ package no.hvl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class KlasseTesterStigespill {
 
     private Terning terning;
+    private Rute rute;
+    private Stige stige;
+    private Spiller spiller;
+
     @BeforeEach
     void setUp() {
         terning = new Terning();
+
+        rute = new Rute(15);
+        stige = new Stige(rute.getRuteNr(), 5);
+
+
+        spiller = new Spiller("Hans");
     }
 
     @Test
@@ -22,4 +33,16 @@ class KlasseTesterStigespill {
       }
 
     }
+
+    @Test
+    void RuteTest(){
+        assertEquals(15, rute.getRuteNr());
+    }
+
+    @Test
+    void stigeTest(){
+        assertEquals(5, stige.getStige());
+    }
+
+
 }

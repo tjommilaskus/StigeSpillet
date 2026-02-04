@@ -11,5 +11,7 @@ public class Terning {
         return (int) (Math.floor(Math.random() * 6) + 1);
 
     }
+
+
 }
  
