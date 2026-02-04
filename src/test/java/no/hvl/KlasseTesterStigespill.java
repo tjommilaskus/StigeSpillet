@@ -23,6 +23,8 @@ class KlasseTesterStigespill {
         brikke = new Brikke(1);
 
         spiller = new Spiller("Hans",terning, brikke);
+
+
     }
 
     @Test
@@ -45,6 +47,13 @@ class KlasseTesterStigespill {
         assertEquals(5, stige.getStige());
     }
 
+
+    @Test
+    void spillerTest(){
+        assertEquals(0, spiller.sjekkRutenr());
+        spiller.slangeEllerStiggeFlytt(5);
+        assertEquals(5, spiller.sjekkRutenr());
+    }
 
 
 
