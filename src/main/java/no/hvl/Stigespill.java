@@ -7,7 +7,8 @@ import java.util.Scanner;
  *  @Author Ebrima Jallow
  */
 public class Stigespill {
-private boolean ferdig;
+private boolean rundeFerdig;
+private boolean spillFerdig = false;
 private Brett brett;
 private Spiller[] spillere;
 Scanner scanner = new Scanner(System.in);
@@ -20,9 +21,9 @@ Scanner scanner = new Scanner(System.in);
           this.spillere = new Spiller[antall];
 
 
-for(int i = 0; i < antall; ) {
+for(int i = 0; i < antall; i++) {
 
-    spillere[i].setNavn(navn[i]);
+    spillere[i] = new Spiller(navn[i]);
 }
 
 
@@ -31,11 +32,11 @@ for(int i = 0; i < antall; ) {
       }
 
     public void spill(int antall, String[] navn){
-
+brett = new Brett();
 
           lagSpillere(antall, navn);
 
-        while (!ferdig){
+        while (!spillFerdig){
 
             spillRunde(spillere);
 
@@ -46,35 +47,46 @@ for(int i = 0; i < antall; ) {
     public void spillRunde(Spiller[] spillere){
 
         for(Spiller spiller : spillere){
-
+rundeFerdig = !rundeFerdig;
             boolean omTrekk = true;
             int omTrekkTeller = 0;
 
-            while(true) {
+            while(!rundeFerdig) {
                 int plass1 = spiller.sjekkRutenr();
                 System.out.println("Trykk enter for å rulle terning!");
-                scanner.next();
+                scanner.nextLine();
+
                 int nyRute = spiller.spillTrekk();
-                scanner.close();
-                int tpFlytt = brett.sjekkRute(nyRute);
+
+
                 int plass2 = spiller.sjekkRutenr();
-                spiller.slangeEllerStiggeFlytt(tpFlytt);
+
+
+                int tpFlytt = brett.sjekkRute(nyRute);
+
+                if(tpFlytt != 0){
+                    spiller.slangeEllerStiggeFlytt(tpFlytt - plass2);
+
+                }
+                System.out.println(spiller.getNavn() +spiller.sjekkRutenr() );
 
                 if((plass2 - plass1) != 6){
-                    omTrekk = false;
+                   rundeFerdig = !rundeFerdig;
                 }else{
                     omTrekkTeller++;
                 }
                 if(omTrekkTeller == 3){
-                    spiller.slangeEllerStiggeFlytt(0);
+                    spiller.slangeEllerStiggeFlytt(-plass2);
+                rundeFerdig = !rundeFerdig;
+                }
 
+                if(spiller.sjekkMaal()){
+                    System.out.println(spiller.getNavn() + "Vant");
+                    spillFerdig = !spillFerdig;
                 }
 
             }
 
-if(spiller.sjekkMaal()){
-    ferdig = !ferdig;
-}
 
 
 

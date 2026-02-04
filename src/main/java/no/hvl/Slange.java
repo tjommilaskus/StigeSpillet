@@ -7,7 +7,7 @@ package no.hvl;
 public class Slange extends Rute{
     private int slangeTil;
 
-    public int getSlange() {
+    public int getSlangeTil() {
         return slangeTil;
     }
     public void setSlange(int slangeTil) {

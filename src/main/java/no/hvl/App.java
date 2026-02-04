@@ -8,7 +8,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        String navn[] = {"martin","tobias"};
+        String navn[] = {"Ebrima","Jallow"};
         Stigespill stigespill = new Stigespill();
         stigespill.spill(2, navn);
 
