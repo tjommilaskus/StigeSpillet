@@ -9,7 +9,7 @@ public class Terning {
 
     int trill(){
         int i = (int) (Math.floor(Math.random() * 6) + 1);
-        System.out.println("trillet"+i);
+        System.out.println("Du rullet\uD83C\uDFB2: " + i);
         return i;
 
     }

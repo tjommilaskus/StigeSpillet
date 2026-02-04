@@ -60,6 +60,7 @@ public class Spiller {
 
         if(ruten > 100){
     brikke.setPos(100 - (ruten-100));
+    System.out.println("Du treffer ikke nøyaktig 100!");
 }
 
         return brikke.getRute();

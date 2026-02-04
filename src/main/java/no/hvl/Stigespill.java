@@ -1,5 +1,6 @@
 package no.hvl;
 
+
 import java.util.Scanner;
 
 /**
@@ -47,7 +48,7 @@ brett = new Brett();
     public void spillRunde(Spiller[] spillere){
 
         for(Spiller spiller : spillere){
-rundeFerdig = !rundeFerdig;
+            rundeFerdig = !rundeFerdig;
             boolean omTrekk = true;
             int omTrekkTeller = 0;
 
@@ -68,20 +69,22 @@ rundeFerdig = !rundeFerdig;
                     spiller.slangeEllerStiggeFlytt(tpFlytt - plass2);
 
                 }
-                System.out.println(spiller.getNavn() +spiller.sjekkRutenr() );
+                System.out.println(spiller.getNavn() + " flytter til rute: " + spiller.sjekkRutenr() );
 
                 if((plass2 - plass1) != 6){
                    rundeFerdig = !rundeFerdig;
                 }else{
                     omTrekkTeller++;
+                    System.out.println("Du rullet 6, trill på nytt!");
                 }
                 if(omTrekkTeller == 3){
                     spiller.slangeEllerStiggeFlytt(-plass2);
+                    System.out.println("Tre seksere på rad! Du rykker tilbake til start!");
                 rundeFerdig = !rundeFerdig;
                 }
 
                 if(spiller.sjekkMaal()){
-                    System.out.println(spiller.getNavn() + "Vant");
+                    System.out.println(spiller.getNavn() + " Vant!!!");
                     spillFerdig = !spillFerdig;
                 }
 

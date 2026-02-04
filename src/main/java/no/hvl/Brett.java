@@ -31,11 +31,11 @@ public class Brett {
 
     public int sjekkRute(int ruteNr){
         if(ruter[ruteNr] instanceof Slange){
-            System.out.print("slange til" + ( (Slange) ruter[ruteNr]).getSlangeTil() );
+            System.out.println("Slange \uD83D\uDC0D til rute: " + ( (Slange) ruter[ruteNr]).getSlangeTil() );
             return ((Slange) ruter[ruteNr]).getSlangeTil();
         }
         if(ruter[ruteNr] instanceof Stige){
-            System.out.print("stige til" + ( (Stige) ruter[ruteNr]).getStigeTil() );
+            System.out.println("Stige \uD83E\uDE9C til rute: " + ( (Stige) ruter[ruteNr]).getStigeTil() );
 
             return ((Stige) ruter[ruteNr]).getStigeTil();
         }
