@@ -18,6 +18,8 @@ public class Spiller {
 
     public Spiller(String navn) {
         this.navn = navn;
+        brikke = new Brikke(1);
+        terning  = new Terning();
     }
 
 
@@ -44,6 +46,8 @@ int nyRute = brikke.flyttTilRute(flytt);
 
 return nyRute;
     }
+
+
 
 
 
