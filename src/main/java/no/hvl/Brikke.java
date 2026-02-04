@@ -41,6 +41,12 @@ rutenr = rutenr + flytt;
         return rutenr ;
 
     }
+
+    /**
+     * sjekker om brikken har kommet i mål
+     *(om spiller har vunnet)
+     * @return true om brikken er på siste rute
+     */
     public boolean sjekkmaal(){
         return rutenr >= 100;
     }

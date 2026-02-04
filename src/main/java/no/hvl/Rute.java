@@ -11,6 +11,7 @@ public class Rute {
 
     /**
      * Konstruerer Ruter
+     *
      * @param RuteNr rute id
      */
     public Rute(int RuteNr) {
@@ -19,14 +20,11 @@ public class Rute {
 
     /**
      * Getter og setter rutenummer
+     *
      * @return int rutenummer
      */
     public int getRuteNr() {
         return RuteNr;
-    }
-
-    public void setRute(int RuteNr) {
-        this.RuteNr = RuteNr;
     }
 
 }
