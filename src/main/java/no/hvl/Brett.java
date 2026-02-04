@@ -6,7 +6,7 @@ import no.hvl.Stige;
 
 public class Brett {
 
-    Rute[] ruter = new Rute[101];
+    Rute[] ruter = new Rute[108];
 
     public Brett(){
 

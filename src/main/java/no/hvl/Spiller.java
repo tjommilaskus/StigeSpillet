@@ -27,6 +27,11 @@ public class Spiller {
     }
 
     public int sjekkRutenr(){
+       int ruten = brikke.getRute();
+
+        if(ruten > 100){
+    brikke.setPos(100 - (ruten-100));
+}
 
         return brikke.getRute();
     }
