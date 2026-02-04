@@ -12,6 +12,7 @@ class KlasseTesterStigespill {
     private Rute rute;
     private Stige stige;
     private Spiller spiller;
+    private Brikke brikke;
 
     @BeforeEach
     void setUp() {
@@ -19,9 +20,9 @@ class KlasseTesterStigespill {
 
         rute = new Rute(15);
         stige = new Stige(rute.getRuteNr(), 5);
+        brikke = new Brikke(1);
 
-
-        spiller = new Spiller("Hans");
+        spiller = new Spiller("Hans",terning, brikke);
     }
 
     @Test
@@ -43,6 +44,8 @@ class KlasseTesterStigespill {
     void stigeTest(){
         assertEquals(5, stige.getStige());
     }
+
+
 
 
 }
