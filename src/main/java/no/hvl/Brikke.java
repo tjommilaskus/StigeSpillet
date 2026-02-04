@@ -36,12 +36,12 @@ public class Brikke {
      * @return ruten den landet på
      */
     public int flyttTilRute(int flytt){
-        int nyRute = getRute() + flytt;
-        setPos(nyRute);
-        return nyRute;
+rutenr = rutenr + flytt;
+
+        return rutenr ;
 
     }
     public boolean sjekkmaal(){
-        return getRute() == 100;
+        return rutenr >= 100;
     }
 }

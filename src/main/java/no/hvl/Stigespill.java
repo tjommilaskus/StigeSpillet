@@ -20,9 +20,9 @@ Scanner scanner = new Scanner(System.in);
           this.spillere = new Spiller[antall];
 
 
-for(int i = 0; i < antall; ) {
+for(int i = 0; i < antall; i++) {
 
-    spillere[i].setNavn(navn[i]);
+    spillere[i] = new Spiller(navn[i]);
 }
 
 
@@ -31,11 +31,11 @@ for(int i = 0; i < antall; ) {
       }
 
     public void spill(int antall, String[] navn){
-
+brett = new Brett();
 
           lagSpillere(antall, navn);
 
-        while (!ferdig){
+        while (true){
 
             spillRunde(spillere);
 
@@ -46,35 +46,47 @@ for(int i = 0; i < antall; ) {
     public void spillRunde(Spiller[] spillere){
 
         for(Spiller spiller : spillere){
-
+ferdig = !ferdig;
             boolean omTrekk = true;
             int omTrekkTeller = 0;
 
-            while(true) {
+            while(!ferdig) {
                 int plass1 = spiller.sjekkRutenr();
                 System.out.println("Trykk enter for å rulle terning!");
-                scanner.next();
+                scanner.nextLine();
+
                 int nyRute = spiller.spillTrekk();
-                scanner.close();
-                int tpFlytt = brett.sjekkRute(nyRute);
+
+
                 int plass2 = spiller.sjekkRutenr();
-                spiller.slangeEllerStiggeFlytt(tpFlytt);
+
+
+                int tpFlytt = brett.sjekkRute(nyRute);
+
+                if(tpFlytt != 0){
+                    spiller.slangeEllerStiggeFlytt(tpFlytt - plass2);
+
+                }
+
+                System.out.println(spiller.getNavn() +spiller.sjekkRutenr() );
 
                 if((plass2 - plass1) != 6){
-                    omTrekk = false;
+                   ferdig = !ferdig;
                 }else{
                     omTrekkTeller++;
                 }
                 if(omTrekkTeller == 3){
-                    spiller.slangeEllerStiggeFlytt(0);
+                    spiller.slangeEllerStiggeFlytt(-plass2);
+                ferdig = !ferdig;
+                }
 
+                if(spiller.sjekkMaal()){
+                    System.out.println(spiller.getNavn());
+                    ferdig = !ferdig;
                 }
 
             }
 
-if(spiller.sjekkMaal()){
-    ferdig = !ferdig;
-}
 
 
 
