@@ -44,7 +44,7 @@ class KlasseTesterStigespill {
 
     @Test
     void stigeTest(){
-        assertEquals(5, stige.getStige());
+       assertEquals(5, stige.getStigeTil());
     }
 
 

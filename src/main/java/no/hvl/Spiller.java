@@ -26,6 +26,10 @@ public class Spiller {
     }
 
 
+    public String getNavn() {
+        return navn;
+    }
+
     public void slangeEllerStiggeFlytt(int flytt){
 
         brikke.flyttTilRute(flytt);
