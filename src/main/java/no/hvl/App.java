@@ -1,5 +1,7 @@
 package no.hvl;
 
+import javax.swing.*;
+
 /**
  * Hello world!
  *
@@ -8,9 +10,17 @@ public class App
 {
     public static void main( String[] args )
     {
-        String navn[] = {"Ebrima","Jallow"};
+
+      int antall = Integer.parseInt(JOptionPane.showInputDialog("Hvor mange spiller?"));
+        String[] navn = new String[antall];
+
+        for(int i = 0; i < navn.length; i++){
+            navn[i] = JOptionPane.showInputDialog("Spiller"+i+"?");
+
+        }
+
         Stigespill stigespill = new Stigespill();
-        stigespill.spill(2, navn);
+        stigespill.spill(antall, navn);
 
     }
 }
