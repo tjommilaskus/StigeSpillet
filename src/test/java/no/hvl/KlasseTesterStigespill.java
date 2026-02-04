@@ -3,8 +3,7 @@ package no.hvl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class KlasseTesterStigespill {
 
@@ -53,6 +52,17 @@ class KlasseTesterStigespill {
         assertEquals(0, spiller.sjekkRutenr());
         spiller.slangeEllerStiggeFlytt(5);
         assertEquals(5, spiller.sjekkRutenr());
+    }
+
+
+    @Test
+    void Brikke(){
+        brikke.setPos(90);
+        assertEquals(90, brikke.getRute());
+        assertFalse(brikke.sjekkmaal());
+        brikke.flyttTilRute(10);
+        assertEquals(100, brikke.getRute());
+        assertTrue(brikke.sjekkmaal());
     }
 
 
