@@ -7,7 +7,8 @@ import java.util.Scanner;
  *  @Author Ebrima Jallow
  */
 public class Stigespill {
-private boolean ferdig;
+private boolean rundeFerdig;
+private boolean spillFerdig = false;
 private Brett brett;
 private Spiller[] spillere;
 Scanner scanner = new Scanner(System.in);
@@ -35,7 +36,7 @@ brett = new Brett();
 
           lagSpillere(antall, navn);
 
-        while (true){
+        while (!spillFerdig){
 
             spillRunde(spillere);
 
@@ -46,11 +47,11 @@ brett = new Brett();
     public void spillRunde(Spiller[] spillere){
 
         for(Spiller spiller : spillere){
-ferdig = !ferdig;
+rundeFerdig = !rundeFerdig;
             boolean omTrekk = true;
             int omTrekkTeller = 0;
 
-            while(!ferdig) {
+            while(!rundeFerdig) {
                 int plass1 = spiller.sjekkRutenr();
                 System.out.println("Trykk enter for å rulle terning!");
                 scanner.nextLine();
@@ -67,22 +68,21 @@ ferdig = !ferdig;
                     spiller.slangeEllerStiggeFlytt(tpFlytt - plass2);
 
                 }
-
                 System.out.println(spiller.getNavn() +spiller.sjekkRutenr() );
 
                 if((plass2 - plass1) != 6){
-                   ferdig = !ferdig;
+                   rundeFerdig = !rundeFerdig;
                 }else{
                     omTrekkTeller++;
                 }
                 if(omTrekkTeller == 3){
                     spiller.slangeEllerStiggeFlytt(-plass2);
-                ferdig = !ferdig;
+                rundeFerdig = !rundeFerdig;
                 }
 
                 if(spiller.sjekkMaal()){
-                    System.out.println(spiller.getNavn());
-                    ferdig = !ferdig;
+                    System.out.println(spiller.getNavn() + "Vant");
+                    spillFerdig = !spillFerdig;
                 }
 
             }
