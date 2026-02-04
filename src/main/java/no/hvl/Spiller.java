@@ -1,4 +1,7 @@
 package no.hvl;
+
+import javax.swing.plaf.nimbus.AbstractRegionPainter;
+
 /**
 * Dette er Spiler Klassen
 *  @Author Martin Palm
@@ -8,12 +11,12 @@ public class Spiller {
     private Terning terning;
     private Brikke brikke;
 
-    public String getNavn() {
-        return navn;
-    }
 
-    public void setNavn(String navn) {
+
+    public Spiller(String navn, Terning terning, Brikke brikke) {
         this.navn = navn;
+        this.brikke = brikke;
+        this.terning = terning;
     }
 
     public Spiller(String navn) {

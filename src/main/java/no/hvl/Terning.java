@@ -13,5 +13,7 @@ public class Terning {
         return i;
 
     }
+
+
 }
  
