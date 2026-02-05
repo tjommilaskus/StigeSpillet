@@ -19,9 +19,9 @@ public class Rute {
     }
 
     /**
-     * Getter og setter rutenummer
+     * Getter rutenummer
      *
-     * @return int rutenummer
+     * @return int rutenummer :)
      */
     public int getRuteNr() {
         return RuteNr;
