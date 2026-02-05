@@ -3,7 +3,8 @@ package no.hvl;
 import javax.swing.*;
 
 /**
- * Hello world!
+ * Launcher spillet
+ * @author Ebrima Henrik Jallow, Magnus Fondenes, Antonio Gil Hammerstad, Martin Palm Sivertsen, Tobias Le
  *
  */
 public class App 
