@@ -1,9 +1,5 @@
 package no.hvl;
 
-import no.hvl.Rute;
-import no.hvl.Slange;
-import no.hvl.Stige;
-
 public class Brett {
     /**
      * Oppretter brett som en array
