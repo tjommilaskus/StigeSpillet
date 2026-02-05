@@ -32,6 +32,11 @@ for(int i = 0; i < antall; i++) {
 
       }
 
+    /**
+     * Denne lager gameplay loopen
+     * @param antall
+     * @param navn
+     */
     public void spill(int antall, String[] navn){
 brett = new Brett();
 
@@ -45,6 +50,10 @@ brett = new Brett();
 
     }
 
+    /**
+     * Denne utfører alt som skal skje i en runde
+     * @param spillere
+     */
     public void spillRunde(Spiller[] spillere){
 
         for(Spiller spiller : spillere){
@@ -80,7 +89,7 @@ brett = new Brett();
                 if(omTrekkTeller == 3){
                     spiller.slangeEllerStiggeFlytt(-plass2);
                     System.out.println("Tre seksere på rad! Du rykker tilbake til start!");
-                rundeFerdig = !rundeFerdig;
+                    rundeFerdig = !rundeFerdig;
                 }
 
                 if(spiller.sjekkMaal()){
