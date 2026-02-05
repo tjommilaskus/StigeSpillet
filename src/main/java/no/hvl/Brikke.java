@@ -20,13 +20,17 @@ public class Brikke {
     }
 
     /**
-     * get og set rutenr
+     * getter brikkens rute
      *
      */
     public int getRute() {
         return rutenr;
     }
 
+    /**
+     * setter brikkens nye posisjon
+     * @param rutenr ruteid
+     */
     public void setPos(int rutenr) {
         this.rutenr = rutenr;
     }
