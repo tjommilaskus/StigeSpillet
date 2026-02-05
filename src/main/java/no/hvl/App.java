@@ -15,7 +15,7 @@ public class App
         String[] navn = new String[antall];
 
         for(int i = 0; i < navn.length; i++){
-            navn[i] = JOptionPane.showInputDialog("Spiller"+i+"?");
+            navn[i] = JOptionPane.showInputDialog("Spiller"+(i+1)+"?");
 
         }
 

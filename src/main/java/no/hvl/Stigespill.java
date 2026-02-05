@@ -1,7 +1,7 @@
 package no.hvl;
 
 
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Dette er Stigespill klassen og det er her spillet blir laget
@@ -21,10 +21,16 @@ Scanner scanner = new Scanner(System.in);
       public void lagSpillere(int antall, String[] navn){
           this.spillere = new Spiller[antall];
 
+        ArrayList<String> liste = new ArrayList<>();
+for(String nav : navn){
+    liste.add(nav);
+}
+
+Collections.shuffle(liste);
 
 for(int i = 0; i < antall; i++) {
 
-    spillere[i] = new Spiller(navn[i]);
+    spillere[i] = new Spiller(liste.get(i));
 }
 
 
